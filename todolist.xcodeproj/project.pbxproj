@@ -14,7 +14,9 @@
 		775E9AFC27A9726200FE7B6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775E9AFA27A9726200FE7B6E /* Main.storyboard */; };
 		775E9AFE27A9726500FE7B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 775E9AFD27A9726500FE7B6E /* Assets.xcassets */; };
 		775E9B0127A9726500FE7B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775E9AFF27A9726500FE7B6E /* LaunchScreen.storyboard */; };
+		77AF70A427AB026F00C6792F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AF70A327AB026F00C6792F /* StorageManager.swift */; };
 		77CC8ED127A9CE9D00DC15FF /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC8ED027A9CE9D00DC15FF /* TaskListViewController.swift */; };
+		77D981C127AB326C00668A46 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F3FE8B27AAF92200645F13 /* TaskList.swift */; };
 		77F3FE8927AAF59500645F13 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F3FE8827AAF59500645F13 /* TasksViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +31,10 @@
 		775E9AFD27A9726500FE7B6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		775E9B0027A9726500FE7B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		775E9B0227A9726500FE7B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77AF70A327AB026F00C6792F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = "/Users/dcodcodcodco/Downloads/swiftbook/some apps/todolist/todolist/StorageManager.swift"; sourceTree = "<absolute>"; };
 		77CC8ED027A9CE9D00DC15FF /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		77F3FE8827AAF59500645F13 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TasksViewController.swift; path = "/Users/dcodcodcodco/Downloads/swiftbook/some apps/todolist/todolist/ViewControllers/TasksViewController.swift"; sourceTree = "<absolute>"; };
-		77F3FE8B27AAF92200645F13 /* TaskList.swift */ = {isa = PBXFileReference; name = TaskList.swift; path = todolist/TaskList.swift; sourceTree = "<group>"; };
+		77F3FE8B27AAF92200645F13 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = todolist/TaskList.swift; sourceTree = "<group>"; };
 		BF7EBF62317DA7EF48F4DCEA /* Pods_todolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_todolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,14 +90,23 @@
 			children = (
 				77CC8ED227A9D29A00DC15FF /* ViewControllers */,
 				77F3FE8C27AAF92200645F13 /* Models */,
-				775E9AF427A9726200FE7B6E /* AppDelegate.swift */,
+				77AF70A527AB027400C6792F /* Services */,
 				775E9AF627A9726200FE7B6E /* SceneDelegate.swift */,
+				775E9AF427A9726200FE7B6E /* AppDelegate.swift */,
 				775E9AFA27A9726200FE7B6E /* Main.storyboard */,
 				775E9AFD27A9726500FE7B6E /* Assets.xcassets */,
 				775E9AFF27A9726500FE7B6E /* LaunchScreen.storyboard */,
 				775E9B0227A9726500FE7B6E /* Info.plist */,
 			);
 			path = todolist;
+			sourceTree = "<group>";
+		};
+		77AF70A527AB027400C6792F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				77AF70A327AB026F00C6792F /* StorageManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		77CC8ED227A9D29A00DC15FF /* ViewControllers */ = {
@@ -231,9 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D981C127AB326C00668A46 /* TaskList.swift in Sources */,
 				775E9AF927A9726200FE7B6E /* AlertController.swift in Sources */,
 				77CC8ED127A9CE9D00DC15FF /* TaskListViewController.swift in Sources */,
 				775E9AF527A9726200FE7B6E /* AppDelegate.swift in Sources */,
+				77AF70A427AB026F00C6792F /* StorageManager.swift in Sources */,
 				775E9AF727A9726200FE7B6E /* SceneDelegate.swift in Sources */,
 				77F3FE8927AAF59500645F13 /* TasksViewController.swift in Sources */,
 			);

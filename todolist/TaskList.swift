@@ -20,3 +20,4 @@ class Task: Object { // задача
     @objc dynamic var date = Date()
     @objc dynamic var isComplete = false
 }
+
