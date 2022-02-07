@@ -10,7 +10,6 @@
         <!--To Do List-->
         <scene sceneID="dpc-rb-Qv2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xvz-Yl-PCx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController title="To Do List" id="SdD-6r-xsW" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AYw-xl-Zm9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -20,6 +19,7 @@
                         <segue destination="g0D-pm-wUI" kind="relationship" relationship="rootViewController" id="dcT-A6-5HO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xvz-Yl-PCx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-677" y="-11"/>
         </scene>
@@ -74,7 +74,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Task List" id="ok0-ZB-eGf">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="2TU-fu-Wmh"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="2TU-fu-Wmh">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="g0D-pm-wUI" id="WGW-zw-EbS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zI7-MX-GNA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

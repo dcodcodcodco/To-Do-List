@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32248144D01248A9DA92F07B /* Pods_todolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7EBF62317DA7EF48F4DCEA /* Pods_todolist.framework */; };
+		774339DC27ADDD2700D9F54B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774339DB27ADDD2700D9F54B /* DataManager.swift */; };
 		775E9AF527A9726200FE7B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E9AF427A9726200FE7B6E /* AppDelegate.swift */; };
 		775E9AF727A9726200FE7B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E9AF627A9726200FE7B6E /* SceneDelegate.swift */; };
 		775E9AF927A9726200FE7B6E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775E9AF827A9726200FE7B6E /* AlertController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2486163635696F095971A822 /* Pods-todolist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todolist.debug.xcconfig"; path = "Target Support Files/Pods-todolist/Pods-todolist.debug.xcconfig"; sourceTree = "<group>"; };
 		4405096368D7B8C361E46473 /* Pods-todolist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todolist.release.xcconfig"; path = "Target Support Files/Pods-todolist/Pods-todolist.release.xcconfig"; sourceTree = "<group>"; };
+		774339DB27ADDD2700D9F54B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		775E9AF127A9726200FE7B6E /* todolist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todolist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		775E9AF427A9726200FE7B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		775E9AF627A9726200FE7B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				77AF70A327AB026F00C6792F /* StorageManager.swift */,
+				774339DB27ADDD2700D9F54B /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77D981C127AB326C00668A46 /* TaskList.swift in Sources */,
+				774339DC27ADDD2700D9F54B /* DataManager.swift in Sources */,
 				775E9AF927A9726200FE7B6E /* AlertController.swift in Sources */,
 				77CC8ED127A9CE9D00DC15FF /* TaskListViewController.swift in Sources */,
 				775E9AF527A9726200FE7B6E /* AppDelegate.swift in Sources */,
