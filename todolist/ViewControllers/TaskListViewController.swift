@@ -39,6 +39,20 @@ class TaskListViewController: UITableViewController {
         return cell
     }
     
+    // MARK: TableViewDelegate
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? { // действие по свайпу в справа налево
+        
+        let taskList = taskLists[indexPath.row] // извлекаем из массива список
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            StorageManager.shared.delete(taskList: taskList) // удаление из базы данных
+            tableView.deleteRows(at: [indexPath], with: .automatic) // удаление в интерфейсе
+            
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // инициализируем свойства при переходе на другой экран
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         guard let tasksVC = segue.destination as? TasksViewController else { return }

@@ -6,7 +6,7 @@
 //
 
 import RealmSwift
-import Combine
+//import Combine
 
 class StorageManager {
     
@@ -18,7 +18,7 @@ class StorageManager {
     
     // MARK: Work with Task Lists
     
-    func save(taskLists: [TaskList]) { // сохранение списка списков
+    func save(taskLists: [TaskList]) { // метод для сохранения списка списков
         write {
             realm.add(taskLists) // добавили в массив
         }
@@ -27,6 +27,13 @@ class StorageManager {
     func save(taskList: TaskList) { // сохранение одного списка
         write {
             realm.add(taskList) // сохраняем лист в базу данных
+        }
+    }
+    
+    func delete(taskList: TaskList) { // метод для удаления одного списка
+        write {
+            realm.delete(taskList.tasks) // сначала удаляем задачи из списка
+            realm.delete(taskList) // потом сам список
         }
     }
     
