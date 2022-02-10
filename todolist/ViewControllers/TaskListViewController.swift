@@ -57,7 +57,17 @@ class TaskListViewController: UITableViewController {
             
         }
         
-        return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
+        let doneAction = UIContextualAction(style: .normal, title: "Done") { _, _, isDone in
+            StorageManager.shared.done(taskList: taskList)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            isDone(true)
+        }
+        
+        editAction.backgroundColor = .orange
+        doneAction.backgroundColor = #colorLiteral(red: 0.3581389785, green: 0.7033968568, blue: 0.4212189317, alpha: 1)
+        
+
+        return UISwipeActionsConfiguration(actions: [doneAction, editAction, deleteAction])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // инициализируем свойства при переходе на другой экран
