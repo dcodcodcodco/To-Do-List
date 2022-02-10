@@ -9,8 +9,6 @@ import UIKit
 
 extension UIAlertController {
     
-    
-    
     static func createAlert(withTitle title: String, andMessage message: String) -> UIAlertController {
         UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
@@ -36,9 +34,11 @@ extension UIAlertController {
         
     }
     
-    func action(completion: @escaping (String, String) -> Void) { // добавление одной задачи в группе
+    func action(with task: Task?, completion: @escaping (String, String) -> Void) { // добавление одной задачи в группе
         
-        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+        let title = task == nil ? "Save" : "Update"
+        
+        let saveAction = UIAlertAction(title: title, style: .default) { _ in
             guard let newTask = self.textFields?.first?.text else { return }
             guard !newTask.isEmpty else { return }
             
@@ -56,10 +56,12 @@ extension UIAlertController {
         
         addTextField { textField in
             textField.placeholder = "New Task"
+            textField.text = task?.name
         }
         
         addTextField { textField in
             textField.placeholder = "Note"
+            textField.text = task?.note
         }
     }
 }

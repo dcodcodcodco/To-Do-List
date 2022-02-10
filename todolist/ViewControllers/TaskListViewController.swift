@@ -14,8 +14,9 @@ class TaskListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        taskLists = StorageManager.shared.realm.objects(TaskList.self)
         createTempData()
+        taskLists = StorageManager.shared.realm.objects(TaskList.self)
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
