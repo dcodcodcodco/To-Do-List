@@ -30,6 +30,12 @@ class StorageManager {
         }
     }
     
+    func edit(taskList: TaskList, newValue: String) { // второй параметр - новое имя для списка
+        write {
+            taskList.name = newValue
+        }
+    }
+    
     func delete(taskList: TaskList) { // метод для удаления одного списка
         write {
             realm.delete(taskList.tasks) // сначала удаляем задачи из списка

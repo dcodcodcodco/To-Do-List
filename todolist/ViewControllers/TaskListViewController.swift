@@ -44,13 +44,20 @@ class TaskListViewController: UITableViewController {
         
         let taskList = taskLists[indexPath.row] // извлекаем из массива список
         
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { _, _, isDone in
+            self.showAlert(with: taskList) {
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            isDone(true) // фиксит фриз свайпа ячейки и последующую его работу после редактирования
+        }
+        
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
             StorageManager.shared.delete(taskList: taskList) // удаление из базы данных
             tableView.deleteRows(at: [indexPath], with: .automatic) // удаление в интерфейсе
             
         }
         
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        return UISwipeActionsConfiguration(actions: [editAction, deleteAction])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // инициализируем свойства при переходе на другой экран
@@ -77,11 +84,18 @@ class TaskListViewController: UITableViewController {
 
 extension TaskListViewController {
     
-    private func showAlert() {
-        let alert = UIAlertController.createAlert(withTitle: "New List", andMessage: "Please set new title")
+    private func showAlert(with taskList: TaskList? = nil, completion: (() -> Void)? = nil) {
+        let title = taskList != nil ? "Edit List" : "New List"
         
-        alert.action { newValue in
-            self.save(taskList: newValue)
+        let alert = UIAlertController.createAlert(withTitle: title, andMessage: "Please set new title")
+        
+        alert.action(with: taskList) { newValue in
+            if let taskList = taskList, let completion = completion {
+                StorageManager.shared.edit(taskList: taskList, newValue: newValue)
+                completion()
+            } else {
+                self.save(taskList: newValue)
+            }
         }
         
         present(alert, animated: true)
