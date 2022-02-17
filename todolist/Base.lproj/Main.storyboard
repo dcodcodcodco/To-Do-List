@@ -32,16 +32,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="TGt-7R-VKH">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
+                                <segment title="A-Z"/>
+                                <segment title="Date"/>
                             </segments>
+                            <connections>
+                                <action selector="sortingList:" destination="g0D-pm-wUI" eventType="valueChanged" id="B0z-dk-mbO"/>
+                            </connections>
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskListCell" textLabel="U0e-EJ-CoS" detailTextLabel="uts-Du-gP6" style="IBUITableViewCellStyleValue1" id="dY9-fq-q09">
-                                <rect key="frame" x="0.0" y="75.5" width="375" height="43.5"/>
+                                <rect key="frame" x="0.0" y="76.5" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dY9-fq-q09" id="gv4-qc-R0R">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
